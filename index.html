@@ -2,12 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="./styling/style.css">
-    <script src="./scripts/main.js" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz!</title>
+    <link rel="stylesheet" href="./styling/style.css">
+    <script src="./scripts/main.js" defer ></script>
+    <title>Math Quiz</title>
 </head>
-<body>
-    <main class="main-container"></main>
+<body id="body">
+    <div id="container" class="container" >
+      <div id="startScreen" class="startScreen">Do <br> you <br>want <br>to<br> learn<br> math?</div>
+      
+        <div id="quizProgress" class="quiz-progress"><span class="seen"></span><span></span></div>
+  <div id="questionContainer" class="question-container" >
+    <p>Math questions</p>
+    <p>What is?</p>
+  </div>
+  <div id="answerContainer" class="answer-container">
+    <button>9 * 8</button>
+    <button>9 * 8</button>
+    <button>9 * 8</button>
+    <button>9 * 8</button>
+  </div>
+  <div id="result">
+  </div>
+  <div id="keepScore"></div>
+  <div id="resetButton" class="resetButton">Play again</div>
+  <div id="startButton" class="startButton">Yes</div>
+    </div>
+</body>
+
+    </div>
 </body>
 </html>
