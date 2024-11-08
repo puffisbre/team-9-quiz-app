@@ -15,7 +15,9 @@ let currentQuestionIndex = 0;
 let questions = {};
 const answersArray = [];
 let score = 0;
-let totalTime = 5;
+let totalTime = 60;
+let gameStart = false;
+let newInterval = null;
 
 highScore.style.color = "white";
 highScore.style.listStyle = "none";
@@ -42,7 +44,7 @@ startButton.addEventListener("click", function () {
   quizProgress.style.visibility = "visible";
   questionContainer.style.visibility = "visible";
   answerContainer.style.visibility = "visible";
-  timer();
+ newInterval = setInterval(timer, 1000);
   
 });
 
@@ -88,6 +90,8 @@ highScoreParent.innerHTML = ""
     currentQuestionIndex = 0;
     answersArray.length = 0;
   });
+  stopTimer();
+  totalTime = 60;
  highScoreParent.appendChild(inputField)
  highScoreParent.appendChild(addScorebutton)
 }
@@ -170,8 +174,8 @@ const clearLoc = () => {
 }
 resetStore.addEventListener("click", clearLoc)
 
+
 function timer(){
-  setInterval(() => {
     if(totalTime > 0){
       totalTime--;
       stopWatch.innerHTML = totalTime.toString();
@@ -182,8 +186,10 @@ function timer(){
           renderResult();
         }, "500");
     }
-   
-  }, "1000");
+}
+
+function stopTimer(){
+  clearInterval(newInterval);
 }
 
 fetch("../json/index.json") // api for the get request
