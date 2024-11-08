@@ -100,6 +100,12 @@
         "question": "What song does Elsa sing in 'Frozen' when she embraces her powers?",
         "possibleAnswers": ["Let It Go", "Do You Want to Build a Snowman?", "For the First Time in Forever", "I got a friend in me"],
         "correctAnswer": "Let It Go"
+    },
+    {
+        "topic": "Movie question",
+        "question": "What song does Elsa sing in 'Frozen' when she embraces her powers?",
+        "possibleAnswers": ["Let It Go", "Do You Want to Build a Snowman?", "For the First Time in Forever", "I got a friend in me"],
+        "correctAnswer": "Let It Go"
     }
 
 ]

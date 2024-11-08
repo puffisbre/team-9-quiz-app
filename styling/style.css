@@ -20,6 +20,10 @@
     padding: 1rem;
     font-family: sans-serif;
   }
+
+  .stopwatch{
+    color: white;
+  }
   
 
 .startScreen {
@@ -165,3 +169,4 @@ color: var(--gray) ;
     border:solid 1px  var(--gray);
     background-color: rgba(0, 0, 0, 0.2);
   }
+
