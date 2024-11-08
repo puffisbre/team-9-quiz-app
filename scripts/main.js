@@ -5,7 +5,8 @@ const result = document.getElementById("result");
 const resetButton = document.getElementById("resetButton");
 const startScreen = document.getElementById("startScreen");
 const startButton = document.getElementById("startButton");
-const keepScore = document.getElementById("keepScore")
+const keepScore = document.getElementById("keepScore");
+const stopWatch = document.querySelector('stopwatch');
 
 let currentQuestionIndex = 0;
 let questions = {};
