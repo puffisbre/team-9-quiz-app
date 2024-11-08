@@ -9,13 +9,16 @@ const keepScore = document.getElementById("keepScore")
 const highScore = document.getElementById("highScore")
 const highScoreParent = document.getElementById("highScoreParent")
 const resetStore = document.getElementById("resetLocal")
+const stopWatch = document.querySelector(".stopwatch");
 
 let currentQuestionIndex = 0;
 let questions = {};
 const answersArray = [];
 let score = 0;
+let totalTime = 5;
 
-
+highScore.style.color = "white";
+highScore.style.listStyle = "none";
 
 const removeQuiz = () => {
   keepScore.style.visibility = "hidden"
@@ -39,6 +42,7 @@ startButton.addEventListener("click", function () {
   quizProgress.style.visibility = "visible";
   questionContainer.style.visibility = "visible";
   answerContainer.style.visibility = "visible";
+  timer();
   
 });
 
@@ -138,17 +142,26 @@ function handleQuestion(index) {
 }
 
 const seeHighScore = () => {
-    let uniqueKey = "id" + Math.random().toString(16).slice(2)
-   highScore.innerHTML =""
+    let uniqueKey = "id" + Math.random().toString(16).slice(2);
+    let playerName = document.getElementById("inputName");
+    let valueArray = [];
+    if(playerName.value != ""){
+    valueArray[0] = `Player name: ${playerName.value}`;
+    valueArray[1] = `Score: ${score}`;
+    highScore.innerHTML =""
     highScoreParent.innerHTML = ""
-    localStorage.setItem(uniqueKey, score.toString())
+    let newString = JSON.stringify(valueArray).replace(/[ [ () "-]/g, ' ').replace("]", " ");
+    localStorage.setItem(uniqueKey, newString)
     for(const item in localStorage){
         if(localStorage.hasOwnProperty(item)){
       const li = document.createElement("li")
       li.textContent = localStorage.getItem(item);
-      highScore.appendChild(li)
+      highScore.appendChild(li)``
     }
     }
+  }else{
+    alert("Please type a name!")
+  }
 }
 
 const clearLoc = () => {
@@ -156,6 +169,22 @@ const clearLoc = () => {
     highScore.innerHTML = ""
 }
 resetStore.addEventListener("click", clearLoc)
+
+function timer(){
+  setInterval(() => {
+    if(totalTime > 0){
+      totalTime--;
+      stopWatch.innerHTML = totalTime.toString();
+    }else{
+      removeQuiz();
+      stopWatch.innerHTML = "";
+        setTimeout(() => {
+          renderResult();
+        }, "500");
+    }
+   
+  }, "1000");
+}
 
 fetch("../json/index.json") // api for the get request
   .then((response) => response.json())
