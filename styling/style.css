@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #000;
   }
   
   :root {
@@ -23,17 +24,11 @@
   
 
 .startScreen {
-    
     position: fixed;
     width: 400px;
     height: 500px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 40px;
-    top: calc(50% - 250px);
+    top: calc(50% - 380px);
     left: calc(50% - 200px);
-    color: var(--gray);
-    border:solid 1px  var(--gray);
-    font-size: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,19 +36,18 @@
 }
 
 .startButton{
+text-transform: uppercase;
+margin-left: 10px;
 position: fixed;
 display: flex;
 justify-content: center;
 align-items: center;
-width: 400px;
-height: 90px;
-margin-top: 70px;
-background-color: rgba(0, 0, 0, 0.2);
-border-radius: 30px;
-font-size: 40px;
-border:solid 1px  var(--gray);
-color: var(--gray) ;
-
+width: 350px;
+height: 70px;
+background-color: var(--white);
+border-radius: 10px;
+font-size: 30px;
+margin-top: -170px;
 }
 
 
@@ -61,6 +55,7 @@ color: var(--gray) ;
     width: 100%;
     max-width: 400px;
   }
+  /*
   .container .quiz-progress {
     display: flex;
     justify-content: evenly;
@@ -70,43 +65,58 @@ color: var(--gray) ;
     width: 100%;
     height: 4px;
     border-radius: 25px;
-    background-color: var(--gray);
+    background-color: red;
   }
   .container .quiz-progress span.seen {
     background-color: var(--primary);
   }
-  .container .question-container {
-    display: flex;
+    */
+  .container .questionContainer{
+    /*display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2rem auto;
+    margin: auto;
+    margin-top: 80px;
     font-size: 1.5rem;
+    width: 300px;*/
+    width: 350px;
+    height: 250px;
+    background-image: url(../Img/pratbubbla.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
   }
-  .container .question-container p:first-of-type {
-    color: var(--gray);
+
+  .container .questionContainer p {
+    margin: auto;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 20px;
+    width: 200px;
   }
-  .container .question-container p:last-of-type {
-    font-size: 2.2rem;
-    color: var(--white);
+
+  .container .answer-container {
+    margin-top: 30px;
   }
   .container .answer-container button {
     display: block;
     width: 100%;
     padding: 1rem 0.5rem;
-    border-radius: 3rem;
+    border-radius: 10px;
     border: none;
     font-size: 1.5rem;
-    margin: 0.5rem auto;
-    background-color: var(--body-bg);
+    margin: 1rem auto;
+    background-color: var(--white);
     border: 2px solid var(--white);
-    color: white;
+    color: var(--primary-dark);
     transition: all 0.2s ease;
     cursor: pointer;
   }
   .container .answer-container button:hover {
     background-color: var(--primary-dark);
-    color: var(--primary);
+    color: var(--white);
     border-color: var(--primary);
   }/*# sourceMappingURL=app.css.map */
 
@@ -114,12 +124,8 @@ color: var(--gray) ;
     position: fixed;
     width: 400px;
     height: 400px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 40px;
     top: calc(50% - 220px);
     left: calc(50% - 200px);
-    color:  var(--gray);
-    border:solid 1px  var(--gray);
     font-size: 30px;
     display: none;
     justify-content: center;
@@ -131,37 +137,57 @@ color: var(--gray) ;
   }
 
   .resetButton {
-
     display: none;
-    width: 400px;
-    padding: 20px;
-    
   }
 
   #resetButton.active {
     display: flex;
     justify-content: center;
-    width: 400px;
-    height: 90px;
   }
 
   .resetTheButton {
-    background-color: rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    margin-left: 10px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 70px;
+    background-color: var(--white);
+    border-radius: 10px;
     font-size: 30px;
-    width: 400px;
-    border-radius: 30px;
+    margin-top: -140px;
+    border: none;
   }
 
   #keepScore {
     position: fixed;
     display: flex;
     justify-content: center;
-    top: 40px;
+    top: 20px;
     width: 400px;
     height: 60px;
-    font-size: 50px;
-    border-radius: 30px;
-    color:  var(--gray);
-    border:solid 1px  var(--gray);
-    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 30px;
+    color:  var(--primary-dark);
+  }
+
+  .footerContainer{
+      width: 100%;
+  }
+  .socialIcons{
+      display: flex;
+      justify-content: center;
+  }
+  .socialIcons a{
+      text-decoration: none;
+      padding:  10px;
+      background-color: white;
+      margin: 10px;
+      border-radius: 50%;
+  }
+  .socialIcons a i{
+      font-size: 2em;
+      color: black;
+      opacity: 0,9;
   }

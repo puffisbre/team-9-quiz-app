@@ -76,7 +76,7 @@ function renderResult() {
 }
 
 function handleQuestion(index) {
-  keepScore.innerHTML = `<div id="keepScore">Score ${score}</div>`
+  /*keepScore.innerHTML = `<div id="keepScore">Score: ${score}</div>`*/
   quizProgress.innerHTML = "";
   questions.forEach((question) => {
     quizProgress.innerHTML += "<span></span>";
@@ -88,7 +88,6 @@ function handleQuestion(index) {
 
   // topic/question
   questionContainer.innerHTML = `
-    <p>${questions[index].topic}</p>
     <p>${questions[index].question}</p>
     `;
 
