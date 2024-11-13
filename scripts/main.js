@@ -15,7 +15,7 @@ let currentQuestionIndex = 0;
 let questions = {};
 const answersArray = [];
 let score = 0;
-let totalTime = 60;
+let totalTime = 10;
 let gameStart = false;
 let newInterval = null;
 
@@ -160,7 +160,7 @@ const seeHighScore = () => {
         if(localStorage.hasOwnProperty(item)){
       const li = document.createElement("li")
       li.textContent = localStorage.getItem(item);
-      highScore.appendChild(li)``
+      highScore.appendChild(li);
     }
     }
   }else{
