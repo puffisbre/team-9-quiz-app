@@ -15,7 +15,7 @@ let currentQuestionIndex = 0;
 let questions = {};
 const answersArray = [];
 let score = 0;
-let totalTime = 10;
+let totalTime = 60;
 let gameStart = false;
 let newInterval = null;
 
