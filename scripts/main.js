@@ -8,7 +8,7 @@ const startButton = document.getElementById("startButton");
 const keepScore = document.getElementById("keepScore");
 const highScore = document.getElementById("highScore");
 const highScoreBtn = document.getElementById("highScoreBtn");
-const modalContainer = document.getElementById("modal");
+const modalContainer = document.getElementById("modalContainer");
 const highScoreParent = document.getElementById("highScoreParent");
 // const resetStore = document.getElementById("resetLocal");
 const stopWatch = document.querySelector(".stopwatch");
@@ -111,9 +111,9 @@ function handleQuestion(index) {
   // answers
   answerContainer.innerHTML = "";
   questions[index].possibleAnswers.forEach((answer) => {
-    answerContainer.innerHTML += `<button>${answer}</button>`;
+    answerContainer.innerHTML += `<button id="answerBtn">${answer}</button>`;
   });
-  let answers = document.querySelectorAll("button");
+  let answers = document.querySelectorAll("#answerBtn");
   answers.forEach((answer) => {
     answer.addEventListener("click", (e) => {
       answersArray.push(e.target.textContent);
@@ -130,7 +130,7 @@ function handleQuestion(index) {
         currentQuestionIndex++;
       }
       if (questions.length - 1 !== index) {
-        answer.disabled = true;
+        // answer.disabled = true;
         setTimeout(() => {
           handleQuestion(currentQuestionIndex);
         }, 1_000);
@@ -148,25 +148,25 @@ const seeHighScore = () => {
   let uniqueKey = "id" + Math.random().toString(16).slice(2);
   let playerName = document.getElementById("inputName");
   let valueArray = [];
-  if (playerName.value != "") {
-    valueArray[0] = `Player name: ${playerName.value}`;
-    valueArray[1] = `Score: ${score}`;
-    highScore.innerHTML = "";
-    highScoreParent.innerHTML = "";
-    let newString = JSON.stringify(valueArray)
-      .replace(/[ [ () "-]/g, " ")
-      .replace("]", " ");
-    localStorage.setItem(uniqueKey, newString);
-    for (const item in localStorage) {
-      if (localStorage.hasOwnProperty(item)) {
-        const li = document.createElement("li");
-        li.textContent = localStorage.getItem(item);
-        highScore.appendChild(li);
-      }
+  // if (playerName.value != "") {
+  valueArray[0] = `Player name: ${playerName.value}`;
+  valueArray[1] = `Score: ${score}`;
+  highScore.innerHTML = "";
+  highScoreParent.innerHTML = "";
+  let newString = JSON.stringify(valueArray)
+    .replace(/[ [ () "-]/g, " ")
+    .replace("]", " ");
+  localStorage.setItem(uniqueKey, newString);
+  for (const item in localStorage) {
+    if (localStorage.hasOwnProperty(item)) {
+      const li = document.createElement("li");
+      li.textContent = localStorage.getItem(item);
+      highScore.appendChild(li);
     }
-  } else {
-    alert("Please type a name!");
   }
+  // } else {
+  //   alert("Please type a name!");
+  // }
 };
 
 const clearLoc = () => {
@@ -202,7 +202,6 @@ fetch("../json/index.json") // api for the get request
 console.log(questions);
 
 function openModal() {
-  console.log(1);
   modalContainer.classList.add("show");
 }
 
