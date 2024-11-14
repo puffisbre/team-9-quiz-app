@@ -24,11 +24,14 @@ body {
   display: grid;
   place-items: center;
   padding: 1rem;
+  font-size: 16px;
 }
 
 
 .stopwatch{
-  font-size: 30px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1.3rem;
   color: var(--primary-dark);
 }
 
@@ -41,13 +44,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-
+  z-index: 0;
 }
 
 .startButton{
   text-transform: uppercase;
   /* position: fixed; */
-  margin: 0 auto;
+  margin: 550px auto 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,12 +60,16 @@ body {
   border-radius: 10px;
   font-size: 30px;
   /* margin-top: 120px; */
+  position: relative;
+  z-index: 1;
 }
 
 
 .container {
   width: 100%;
   max-width: 400px;
+  position: relative;
+  top: -20px;
 }
 
 .container .quiz-progress {
@@ -82,28 +89,26 @@ body {
 }
  
 .container .questionContainer{
-  /*display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-top: 80px;
-  font-size: 1.5rem;
-  width: 300px;*/
-  width: 350px;
-  height: 250px;
-  background-image: url(../Img/pratbubbla.svg);
+  width: 430px;
+  height: 330px;
+  background-image: url(../Img/comic-pratbubbla-white.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   margin: auto;
+
+  padding-top: 95px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .container .questionContainer p {
   margin: auto;
   text-align: center;
-  padding-top: 40px;
-  font-size: 20px;
+  padding-top: 15px;
+  font-size: 0.9rem;
   width: 200px;
 }
 
@@ -113,11 +118,11 @@ body {
 .container .answer-container button {
   display: block;
   width: 100%;
-  padding: 1rem 0.5rem;
+  padding: 0.8rem 0.5rem;
   border-radius: 10px;
   border: none;
-  font-size: 1.5rem;
-  margin: 1rem auto;
+  font-size: 1.2rem;
+  margin: 0.4rem auto;
   background-color: var(--white);
   border: 2px solid var(--white);
   color: var(--primary-dark);
@@ -137,12 +142,12 @@ body {
 }
 
 #result {
-  position: fixed;
-  width: 400px;
-  height: 400px;
-  top: calc(50% - 220px);
-  left: calc(50% - 200px);
-  font-size: 30px;
+  /* position: fixed; */
+  /* width: 400px; */
+  /* height: 400px; */
+  /* top: calc(50% - 220px); */
+  /* left: calc(50% - 200px); */
+  font-size: 1.2rem;
   display: none;
   justify-content: center;
   align-items: center;
@@ -161,10 +166,46 @@ body {
   justify-content: center;
 }
 
+
+#highScoreParent {
+  display: flex;
+  flex-direction: column;
+}
+
+#highScoreParent input {
+  text-transform: uppercase;
+  /* margin-left: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 70px;
+  text-align: center;
+  background-color: var(--white);
+  border-radius: 10px;
+  /* font-size: 30px; */
+  border: none;
+  margin: 15px auto 0;
+}
+
+#highScoreParent button {
+  text-transform: uppercase;
+  /* margin-left: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 70px;
+  background-color: var(--white);
+  border-radius: 10px;
+  /* font-size: 30px; */
+  border: none;
+  margin: 15px auto;
+}
+
 .resetTheButton {
   text-transform: uppercase;
-  margin-left: 10px;
-  position: fixed;
+  /* margin-left: 10px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,7 +214,6 @@ body {
   background-color: var(--white);
   border-radius: 10px;
   font-size: 30px;
-  margin-top: -140px;
   border: none;
 }
 
@@ -184,14 +224,24 @@ body {
   top: 20px;
   width: 400px;
   height: 60px; */
-  font-size: 30px;
+  font-size: 1.3rem;
   color:  var(--primary-dark);
 }
 
+#resultScore {
+  text-align: left;
+  width: fit-content;
+  margin: 15px auto;
+}
+
 .info-container {
+  background-image: url('/Img/result-pratbubbla.png');
+  background-size: 100% 100%;
+  height: 330px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .footerContainer{
@@ -214,6 +264,8 @@ body {
     opacity: 0,9;
 }
 
+
+
 .highScoreContainer {
   display: flex;
   justify-content: center;
@@ -234,6 +286,8 @@ body {
 
 .modal-container {
   display: none;
+  /* position: relative; */
+  /* z-index: ; */
 }
 .show {
   display: flex;
@@ -268,5 +322,30 @@ body {
     display: grid;
     grid-template-columns: auto auto;
     gap: 0 20px;
+  }
+
+  .startButton {
+    margin: 550px auto 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 800px;
+  }
+
+  .container .answer-container button {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .container .questionContainer{
+    width: 470px;
+    height: 370px;
+    padding-top: 120px;
+  }
+  
+  .container .questionContainer p {
+    padding-top: 15px;
+    font-size: 1.2rem;
   }
 }

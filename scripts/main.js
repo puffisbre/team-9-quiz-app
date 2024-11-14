@@ -7,34 +7,42 @@ const startScreen = document.getElementById("startScreen");
 const startButton = document.getElementById("startButton");
 const keepScore = document.getElementById("keepScore");
 const highScore = document.getElementById("highScore");
+const resultScore = document.getElementById("resultScore");
 const highScoreBtn = document.getElementById("highScoreBtn");
 const modalContainer = document.getElementById("modalContainer");
 const highScoreParent = document.getElementById("highScoreParent");
 // const resetStore = document.getElementById("resetLocal");
 const stopWatch = document.querySelector(".stopwatch");
+const resultTime = document.querySelector(".resultTime");
+const infoContainer = document.querySelector(".info-container");
 
 let currentQuestionIndex = 0;
 let questions = {};
 const answersArray = [];
 let score = 0;
-let totalTime = 1000000;
+let totalTime = 90;
+let timeResult = 0;
 let gameStart = false;
 let newInterval = null;
 
 highScore.style.color = "white";
 highScore.style.listStyle = "none";
+resultScore.style.listStyle = "none";
+infoContainer.style.display = "none";
 
 const removeQuiz = () => {
   keepScore.style.visibility = "hidden";
   quizProgress.style.visibility = "hidden";
-  questionContainer.style.visibility = "hidden";
-  answerContainer.style.visibility = "hidden";
+  questionContainer.style.display = "none";
+  answerContainer.style.display = "none";
 };
 removeQuiz();
 
 const startAgain = () => {
   startButton.style.display = "flex";
   startScreen.style.display = "flex";
+  infoContainer.style.display = "none";
+  resultScore.innerHTML = "";
 };
 
 startButton.addEventListener("click", function () {
@@ -42,14 +50,15 @@ startButton.addEventListener("click", function () {
   startScreen.style.display = "none";
   keepScore.style.visibility = "visible";
   quizProgress.style.visibility = "visible";
-  questionContainer.style.visibility = "visible";
-  answerContainer.style.visibility = "visible";
+  questionContainer.style.display = "block";
+  answerContainer.style.display = "grid";
   newInterval = setInterval(timer, 1000);
+  modalContainer.classList.remove("show");
 });
 
 function renderResult() {
   const inputField = document.createElement("input");
-  const addScorebutton = document.createElement("addScoreButton");
+  const addScorebutton = document.createElement("button");
 
   inputField.type = "text";
   inputField.placeholder = "Your name here plz!";
@@ -68,7 +77,7 @@ function renderResult() {
   highScoreParent.innerHTML = "";
 
   result.innerHTML = `
-  <h1>${correct.length} av ${questions.length}</h1>
+  <h1>${correct.length} / ${questions.length}</h1>
   `;
   resetButton.innerHTML = `<button class="resetTheButton"> Play again </button>`;
 
@@ -86,9 +95,12 @@ function renderResult() {
     answersArray.length = 0;
   });
   stopTimer();
-  totalTime = 60;
+  resultTime.innerHTML = `Time left: ${totalTime}s`;
+  stopWatch.style.display = "none";
+  totalTime = 90;
   highScoreParent.appendChild(inputField);
   highScoreParent.appendChild(addScorebutton);
+  infoContainer.style.display = "flex";
 }
 
 function handleQuestion(index) {
@@ -104,9 +116,11 @@ function handleQuestion(index) {
 
   // topic/question
   questionContainer.innerHTML = `
-    <p>${questions[index].topic}</p>
-    <p>${questions[index].question}</p>
-    `;
+    <div>
+      <p>${questions[index].topic}</p>
+      <p>${questions[index].question}</p>
+    </div>
+      `;
 
   // answers
   answerContainer.innerHTML = "";
@@ -162,6 +176,7 @@ const addHighScore = () => {
         const li = document.createElement("li");
         li.textContent = localStorage.getItem(item);
         highScore.appendChild(li);
+        resultScore.appendChild(li);
       }
     }
   } else {
@@ -169,8 +184,8 @@ const addHighScore = () => {
   }
 };
 const seeHighScore = () => {
-  highScore.innerHTML = "";
-  highScoreParent.innerHTML = "";
+  // highScore.innerHTML = "";
+  // highScoreParent.innerHTML = "";
   for (const item in localStorage) {
     if (localStorage.hasOwnProperty(item)) {
       const li = document.createElement("li");
@@ -189,7 +204,7 @@ const clearLoc = () => {
 function timer() {
   if (totalTime > 0) {
     totalTime--;
-    stopWatch.innerHTML = "Time left: " + totalTime.toString();
+    stopWatch.innerHTML = "Time left: " + totalTime.toString() + "s";
   } else {
     removeQuiz();
     stopWatch.innerHTML = "";
