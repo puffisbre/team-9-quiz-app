@@ -57,7 +57,7 @@ function renderResult() {
   inputField.name = "inputName";
   addScorebutton.textContent = "Save score";
 
-  addScorebutton.addEventListener("click", seeHighScore);
+  addScorebutton.addEventListener("click", addHighScore);
 
   result.classList.add("active");
   resetButton.classList.add("active");
@@ -144,19 +144,33 @@ function handleQuestion(index) {
   });
 }
 
-const seeHighScore = () => {
+const addHighScore = () => {
   let uniqueKey = "id" + Math.random().toString(16).slice(2);
   let playerName = document.getElementById("inputName");
   let valueArray = [];
-  // if (playerName.value != "") {
-  valueArray[0] = `Player name: ${playerName.value}`;
-  valueArray[1] = `Score: ${score}`;
+  if (playerName.value != "") {
+    valueArray[0] = `Player name: ${playerName.value}`;
+    valueArray[1] = `Score: ${score}`;
+    highScore.innerHTML = "";
+    highScoreParent.innerHTML = "";
+    let newString = JSON.stringify(valueArray)
+      .replace(/[ [ () "-]/g, " ")
+      .replace("]", " ");
+    localStorage.setItem(uniqueKey, newString);
+    for (const item in localStorage) {
+      if (localStorage.hasOwnProperty(item)) {
+        const li = document.createElement("li");
+        li.textContent = localStorage.getItem(item);
+        highScore.appendChild(li);
+      }
+    }
+  } else {
+    alert("Please type a name!");
+  }
+};
+const seeHighScore = () => {
   highScore.innerHTML = "";
   highScoreParent.innerHTML = "";
-  let newString = JSON.stringify(valueArray)
-    .replace(/[ [ () "-]/g, " ")
-    .replace("]", " ");
-  localStorage.setItem(uniqueKey, newString);
   for (const item in localStorage) {
     if (localStorage.hasOwnProperty(item)) {
       const li = document.createElement("li");
@@ -164,9 +178,6 @@ const seeHighScore = () => {
       highScore.appendChild(li);
     }
   }
-  // } else {
-  //   alert("Please type a name!");
-  // }
 };
 
 const clearLoc = () => {
@@ -202,6 +213,7 @@ fetch("../json/index.json") // api for the get request
 console.log(questions);
 
 function openModal() {
+  seeHighScore();
   modalContainer.classList.add("show");
 }
 
