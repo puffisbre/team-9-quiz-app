@@ -22,7 +22,7 @@ let currentQuestionIndex = 0;
 let questions = {};
 const answersArray = [];
 let score = 0;
-let totalTime = 90;
+let totalTime;
 let timeResult = 0;
 let gameStart = false;
 let newInterval = null;
@@ -62,8 +62,11 @@ startButton.addEventListener("click", function () {
   quizProgress.style.visibility = "visible";
   questionContainer.style.display = "block";
   answerContainer.style.display = "grid";
-  newInterval = setInterval(timer, 1000);
   modalContainer.classList.remove("show");
+  totalTime = 90;
+  stopWatch.style.display = "block";
+  stopWatch.innerHTML = "Time left: " + totalTime.toString() + "s";
+  newInterval = setInterval(timer, 1000);
 });
 
 function renderResult() {
@@ -102,7 +105,6 @@ function renderResult() {
     handleQuestion(currentQuestionIndex);
     resetButton.classList.remove("active");
     result.classList.remove("active");
-    console.clear();
     startAgain();
   
     
@@ -111,7 +113,6 @@ function renderResult() {
   stopTimer();
   resultTime.innerHTML = `Time left: ${totalTime}s`;
   stopWatch.style.display = "none";
-  totalTime = 90;
   highScoreParent.appendChild(inputField);
   highScoreParent.appendChild(addScorebutton);
   infoContainer.style.display = "flex";
@@ -174,6 +175,7 @@ function handleQuestion(index) {
   });
   colorSpan()
   let answers = document.querySelectorAll("#answerBtn");
+  let testArray = [...answers];
   answers.forEach((answer) => {
     answer.addEventListener("click", (e) => {
       answersArray.push(e.target.textContent);
@@ -181,8 +183,14 @@ function handleQuestion(index) {
         score++;
         console.log("correct");
         answer.classList.add("right");
+        testArray.forEach(item => {
+          item.disabled = true;
+        })
       } else {
         answer.classList.add("wrong");
+        testArray.forEach(item => {
+          item.disabled = true;
+        })
         
       }
       if (currentQuestionIndex === questions.length - 1) {
@@ -243,11 +251,6 @@ const seeHighScore = () => {
   }
 };
 
-const clearLoc = () => {
-  localStorage.clear();
-  highScore.innerHTML = "";
-};
-// resetStore.addEventListener("click", clearLoc);
 
 function timer() {
   if (totalTime > 0) {
@@ -263,6 +266,7 @@ function timer() {
 }
 
 function stopTimer() {
+  totalTime = 90;
   clearInterval(newInterval);
 }
 
@@ -276,6 +280,7 @@ fetch("../json/index.json") // api for the get request
 console.log(questions);
 
 function openModal() {
+  highScore.innerHTML = '';
   seeHighScore();
   modalContainer.classList.add("show");
 }
