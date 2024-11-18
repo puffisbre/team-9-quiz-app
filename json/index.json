@@ -1,0 +1,200 @@
+[
+    {
+        "topic": "Movie question",
+        "question": "What is the name of the wizarding school in the 'Harry Potter' series?",
+        "possibleAnswers": [
+            "Hogwarts",
+            "Narnia",
+            "Gondor",
+            "Gotham"
+        ],
+        "correctAnswer": "Hogwarts"
+    },
+    {
+        "topic": "Movie question",
+        "question": "Which animated movie features a talking lion named Simba?",
+        "possibleAnswers": [
+            "Finding Nemo",
+            "The Lion King",
+            "Shrek",
+            "Toy Story 2"
+        ],
+        "correctAnswer": "The Lion King"
+    },
+    {
+        "topic": "Movie question",
+        "question": "Who directed the film 'Titanic'?",
+        "possibleAnswers": [
+            "Steven Spielberg",
+            "James Cameron",
+            "Martin Scorsese",
+            "Christopher Nolan"
+        ],
+        "correctAnswer": "James Cameron"
+    },
+    {
+        "topic": "Movie question",
+        "question": "In which movie does a young girl follow a yellow brick road?",
+        "possibleAnswers": [
+            "Alice in Wonderland",
+            "The Wizard of Oz",
+            "Mary Poppins",
+            "Harry Potter"
+        ],
+        "correctAnswer": "The Wizard of Oz"
+    },
+    {
+        "topic": "Movie question",
+        "question": "What is the name of the superhero in the 'Spider-Man' movies?",
+        "possibleAnswers": [
+            "Bruce Wayne",
+            "Peter Parker",
+            "Clark Kent",
+            "Tony Stark"
+        ],
+        "correctAnswer": "Peter Parker"
+    },
+    {
+        "topic": "Movie question",
+        "question": "Which movie features the quote, 'I'll be back'?",
+        "possibleAnswers": [
+            "Die Hard",
+            "Terminator",
+            "Rambo",
+            "Back to the Future"
+        ],
+        "correctAnswer": "Terminator"
+    },
+    {
+        "topic": "Movie question",
+        "question": "In the 'Toy Story' series, what is the name of the cowboy toy?",
+        "possibleAnswers": [
+            "Buzz Lightyear",
+            "Woody",
+            "Rex",
+            "Mr Potatohead"
+        ],
+        "correctAnswer": "Woody"
+    },
+    {
+        "topic": "Movie question",
+        "question": "Which Disney princess has a raccoon as a sidekick?",
+        "possibleAnswers": [
+            "Ariel",
+            "Pocahontas",
+            "Cinderella",
+            "Snow White"
+        ],
+        "correctAnswer": "Pocahontas"
+    },
+    {
+        "topic": "Movie question",
+        "question": "What color is the infamous dress worn by the character Jessica Rabbit in 'Who Framed Roger Rabbit'?",
+        "possibleAnswers": [
+            "Red",
+            "Blue",
+            "Green",
+            "Yellow"
+        ],
+        "correctAnswer": "Red"
+    },
+    {
+        "topic": "Movie question",
+        "question": "In 'Finding Nemo,' what type of fish is Nemo?",
+        "possibleAnswers": [
+            "Clownfish",
+            "Goldfish",
+            "Betta fish",
+            "Salmon"
+        ],
+        "correctAnswer": "Clownfish"
+    },
+    {
+        "topic": "Movie question",
+        "question": "What is the name of the fictional African country in 'Black Panther'?",
+        "possibleAnswers": [
+            "Zamunda",
+            "Wakanda",
+            "Elbonia",
+            "Wakandie"
+        ],
+        "correctAnswer": "Wakanda"
+    },
+    {
+        "topic": "Movie question",
+        "question": "Who is the lead actor in the movie 'Pirates of the Caribbean'?",
+        "possibleAnswers": [
+            "Orlando Bloom",
+            "Johnny Depp",
+            "Hugh Jackman",
+            "Leonardo di Caprio"
+        ],
+        "correctAnswer": "Johnny Depp"
+    },
+    {
+        "topic": "Movie question",
+        "question": "In 'Frozen,' what magical ability does Elsa have?",
+        "possibleAnswers": [
+            "Fire manipulation",
+            "Time travel",
+            "Ice powers",
+            "Invisibility"
+        ],
+        "correctAnswer": "Ice powers"
+    },
+    {
+        "topic": "Movie question",
+        "question": "Which film features a dinosaur theme park?",
+        "possibleAnswers": [
+            "Jurassic Park",
+            "King Kong",
+            "The Land Before Time",
+            "Godzilla"
+        ],
+        "correctAnswer": "Jurassic Park"
+    },
+    {
+        "topic": "Movie question",
+        "question": "What is the name of the bear in 'The Jungle Book'?",
+        "possibleAnswers": [
+            "Baloo",
+            "Bagheera",
+            "Shere Khan",
+            "Mowgli"
+        ],
+        "correctAnswer": "Baloo"
+    },
+    {
+        "topic": "Movie question",
+        "question": "In 'The Incredibles,' what is Mr. Incredible’s real name?",
+        "possibleAnswers": [
+            "Bob Parr",
+            "Jack-Jack",
+            "Dash",
+            "Bruce Banner"
+        ],
+        "correctAnswer": "Bob Parr"
+    },
+    {
+        "topic": "Movie question",
+        "question": "What song does Elsa sing in 'Frozen' when she embraces her powers?",
+        "possibleAnswers": [
+            "Let It Go",
+            "Do You Want to Build a Snowman?",
+            "For the First Time in Forever",
+            "I got a friend in me"
+        ],
+        "correctAnswer": "Let It Go"
+    },
+    {
+        "topic": "Movie question",
+        "question": "What song does Elsa sing in 'Frozen' when she embraces her powers?",
+        "possibleAnswers": [
+            "Let It Go",
+            "Do You Want to Build a Snowman?",
+            "For the First Time in Forever",
+            "I got a friend in me"
+        ],
+        "correctAnswer": "Let It Go"
+    }
+]
