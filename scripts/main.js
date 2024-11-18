@@ -16,6 +16,8 @@ const stopWatch = document.querySelector(".stopwatch");
 const resultTime = document.querySelector(".resultTime");
 const infoContainer = document.querySelector(".info-container");
 
+
+
 let currentQuestionIndex = 0;
 let questions = {};
 const answersArray = [];
@@ -24,6 +26,11 @@ let totalTime = 90;
 let timeResult = 0;
 let gameStart = false;
 let newInterval = null;
+
+
+
+
+
 
 highScore.style.color = "white";
 highScore.style.listStyle = "none";
@@ -43,7 +50,10 @@ const startAgain = () => {
   startScreen.style.display = "flex";
   infoContainer.style.display = "none";
   resultScore.innerHTML = "";
+ 
 };
+
+
 
 startButton.addEventListener("click", function () {
   startButton.style.display = "none";
@@ -74,6 +84,8 @@ function renderResult() {
     return q.correctAnswer === answersArray[i];
   });
 
+
+
   highScoreParent.innerHTML = "";
 
   result.innerHTML = `
@@ -85,14 +97,16 @@ function renderResult() {
     highScoreParent.innerHTML = "";
     score = 0;
     console.log("klick");
+    currentQuestionIndex = 0;
+    answersArray.length = 0;
     handleQuestion(currentQuestionIndex);
     resetButton.classList.remove("active");
     result.classList.remove("active");
-
     console.clear();
     startAgain();
-    currentQuestionIndex = 0;
-    answersArray.length = 0;
+  
+    
+    
   });
   stopTimer();
   resultTime.innerHTML = `Time left: ${totalTime}s`;
@@ -109,10 +123,41 @@ function handleQuestion(index) {
   questions.forEach((question) => {
     quizProgress.innerHTML += "<span></span>";
   });
-  let spans = document.querySelectorAll("span");
-  for (let i = 0; i <= index; i++) {
-    spans[i].classList.add("seen");
-  }
+
+  const colorSpan = () => {
+    let spans = document.querySelectorAll("span")
+
+    for (let i = 0; i <= index; i++) {
+      const span = spans[i]; 
+  
+      if (answersArray[i] === questions[i].correctAnswer) {
+        span.classList.add("correct");
+      
+      } else if (answersArray[i])  {
+        span.classList.add("fail"); 
+       
+    }else {
+        span.classList.add("seen")
+      }
+     }
+    }
+  
+// let spans = document.querySelectorAll("span")
+//   for (let i = 0; i <= index; i++) {
+//     const span = spans[i]; 
+
+//     if (answersArray[i] === questions[i].correctAnswer) {
+//       span.classList.add("correct");
+    
+//     }  else if (answersArray[i])  {
+//       span.classList.add("fail");
+     
+//     } else {
+      
+//       span.classList.add("seen")
+//     }
+//    }
+
 
   // topic/question
   questionContainer.innerHTML = `
@@ -127,6 +172,7 @@ function handleQuestion(index) {
   questions[index].possibleAnswers.forEach((answer) => {
     answerContainer.innerHTML += `<button id="answerBtn">${answer}</button>`;
   });
+  colorSpan()
   let answers = document.querySelectorAll("#answerBtn");
   answers.forEach((answer) => {
     answer.addEventListener("click", (e) => {
@@ -137,12 +183,14 @@ function handleQuestion(index) {
         answer.classList.add("right");
       } else {
         answer.classList.add("wrong");
+        
       }
       if (currentQuestionIndex === questions.length - 1) {
         currentQuestionIndex = 0;
       } else {
         currentQuestionIndex++;
       }
+      
       if (questions.length - 1 !== index) {
         // answer.disabled = true;
         setTimeout(() => {

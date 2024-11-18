@@ -87,7 +87,14 @@ body {
 .container .quiz-progress span.seen {
   background-color: rgba(0,0,0,0.3);
 }
- 
+.container .quiz-progress span.correct {
+  background-color: green;
+} 
+
+.container .quiz-progress span.fail {
+  background-color: red;
+} 
+
 .container .questionContainer{
   width: 430px;
   height: 330px;
@@ -139,6 +146,10 @@ body {
 }
 .container .answer-container button.wrong {
   background-color: red;
+}
+
+.container .answer-container span.correct {
+  background-color: green;
 }
 
 #result {
