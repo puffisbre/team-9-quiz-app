@@ -15,6 +15,9 @@ const highScoreParent = document.getElementById("highScoreParent");
 const stopWatch = document.querySelector(".stopwatch");
 const resultTime = document.querySelector(".resultTime");
 const infoContainer = document.querySelector(".info-container");
+const categoryContainer = document.getElementById("category-container");
+const movieCategory = document.getElementById("movie-category");
+const gameCategory = document.getElementById("game-category");
 
 
 
@@ -27,15 +30,40 @@ let timeResult = 0;
 let gameStart = false;
 let newInterval = null;
 
+let choosenCategory;
+let whatCategoryPlayed;
 
+movieCategory.addEventListener('click', function(){
+  choosenCategory = '../json/index.json';
+  fetch(choosenCategory) // api for the get request
+  .then((response) => response.json())
+  .then((data) => {
+    questions = data;
+    handleQuestion(currentQuestionIndex);
+  });
+  whatCategoryPlayed = "Movies"
+  categoryContainer.style.display = "none";
+  startButton.style.display = "flex";
+})
 
-
-
+gameCategory.addEventListener('click', function(){
+  choosenCategory = '../json/gaming-quiz.json';
+  fetch(choosenCategory) // api for the get request
+  .then((response) => response.json())
+  .then((data) => {
+    questions = data;
+    handleQuestion(currentQuestionIndex);
+  });
+  whatCategoryPlayed = "Gaming"
+  categoryContainer.style.display = "none";
+  startButton.style.display = "flex";
+})
 
 highScore.style.color = "white";
 highScore.style.listStyle = "none";
 resultScore.style.listStyle = "none";
 infoContainer.style.display = "none";
+startButton.style.display = "none";
 
 const removeQuiz = () => {
   keepScore.style.visibility = "hidden";
@@ -46,9 +74,10 @@ const removeQuiz = () => {
 removeQuiz();
 
 const startAgain = () => {
-  startButton.style.display = "flex";
+  categoryContainer.style.display = "flex";
   startScreen.style.display = "flex";
   infoContainer.style.display = "none";
+  choosenCategory = "";
   resultScore.innerHTML = "";
  
 };
@@ -221,10 +250,11 @@ const addHighScore = () => {
   if (playerName.value != "") {
     valueArray[0] = `Player name: ${playerName.value}`;
     valueArray[1] = `Score: ${score}`;
+    valueArray[2] = `Category: ${whatCategoryPlayed}`;
     highScore.innerHTML = "";
     highScoreParent.innerHTML = "";
     let newString = JSON.stringify(valueArray)
-      .replace(/[ [ () "-]/g, " ")
+      .replace(/[ [ () , "-]/g, " ")
       .replace("]", " ");
     localStorage.setItem(uniqueKey, newString);
     for (const item in localStorage) {
@@ -266,16 +296,10 @@ function timer() {
 }
 
 function stopTimer() {
-  totalTime = 90;
   clearInterval(newInterval);
 }
 
-fetch("../json/index.json") // api for the get request
-  .then((response) => response.json())
-  .then((data) => {
-    questions = data;
-    handleQuestion(currentQuestionIndex);
-  });
+
 
 console.log(questions);
 

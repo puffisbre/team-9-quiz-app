@@ -1,0 +1,178 @@
+[
+    {
+        "topic": "Gaming question",
+        "question": "Which video game features the character 'Master Chief'?",
+        "possibleAnswers": [
+            "Halo",
+            "Call of Duty",
+            "Gears of War",
+            "Doom"
+        ],
+        "correctAnswer": "Halo"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "What is the name of the fictional continent in 'The Witcher' series?",
+        "possibleAnswers": [
+            "Tamriel",
+            "Eorzea",
+            "The Continent",
+            "Midgard"
+        ],
+        "correctAnswer": "The Continent"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "In 'The Legend of Zelda: Breath of the Wild', what is the name of the princess you must rescue?",
+        "possibleAnswers": [
+            "Peach",
+            "Zelda",
+            "Samus",
+            "Aerith"
+        ],
+        "correctAnswer": "Zelda"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "Which game is known for its battle royale mode featuring 100 players?",
+        "possibleAnswers": [
+            "Apex Legends",
+            "Fortnite",
+            "PUBG",
+            "Call of Duty: Warzone"
+        ],
+        "correctAnswer": "Fortnite"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "In 'Minecraft,' what do you need to mine to get diamonds?",
+        "possibleAnswers": [
+            "Stone",
+            "Iron Ore",
+            "Gold Ore",
+            "Diamond Ore"
+        ],
+        "correctAnswer": "Diamond Ore"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "In 'Red Dead Redemption 2,' what is the name of the main protagonist?",
+        "possibleAnswers": [
+            "John Marston",
+            "Arthur Morgan",
+            "Bill Williamson",
+            "Dutch van der Linde"
+        ],
+        "correctAnswer": "Arthur Morgan"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "Which gaming console was the first to introduce motion-controlled gameplay?",
+        "possibleAnswers": [
+            "PlayStation 3",
+            "Xbox 360",
+            "Wii",
+            "Nintendo Switch"
+        ],
+        "correctAnswer": "Wii"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "In 'Overwatch,' which character is known for her healing abilities and purple orb?",
+        "possibleAnswers": [
+            "Mercy",
+            "Zenyatta",
+            "Moira",
+            "Ana"
+        ],
+        "correctAnswer": "Moira"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "In 'Pokémon,' which of these is a starter Pokémon from the Sinnoh region?",
+        "possibleAnswers": [
+            "Bulbasaur",
+            "Charmander",
+            "Turtwig",
+            "Snivy"
+        ],
+        "correctAnswer": "Turtwig"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "In 'Super Mario Bros.', who is Mario's brother?",
+        "possibleAnswers": [
+            "Luigi",
+            "Donkey Kong",
+            "Yoshi",
+            "Toad"
+        ],
+        "correctAnswer": "Luigi"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "Which game series features a character named Samus Aran?",
+        "possibleAnswers": [
+            "Metroid",
+            "Halo",
+            "Castlevania",
+            "Mega Man"
+        ],
+        "correctAnswer": "Metroid"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "In 'The Elder Scrolls V: Skyrim,' which shout is used to push enemies away?",
+        "possibleAnswers": [
+            "Yol Toor Shul",
+            "Laas Yah Nir",
+            "Force Push",
+            "Fus Ro Dah"
+        ],
+        "correctAnswer": "Fus Ro Dah"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "In 'League of Legends,' which character is known as the 'Dark Child'?",
+        "possibleAnswers": [
+            "Jinx",
+            "Lux",
+            "Veigar",
+            "Karthus"
+        ],
+        "correctAnswer": "Veigar"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "Which 1990s arcade game featured a yellow circular character who eats dots?",
+        "possibleAnswers": [
+            "Donkey Kong",
+            "Pac-Man",
+            "Street Fighter II",
+            "Galaga"
+        ],
+        "correctAnswer": "Pac-Man"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "What is the name of the primary antagonist in the 'Final Fantasy VII' video game?",
+        "possibleAnswers": [
+            "Sephiroth",
+            "Kefka Palazzo",
+            "Ultimecia",
+            "Kuja"
+        ],
+        "correctAnswer": "Sephiroth"
+    },
+    {
+        "topic": "Gaming question",
+        "question": "Which popular battle royale game features 'Squads' and 'Trios' modes alongside solo gameplay?",
+        "possibleAnswers": [
+            "Fortnite",
+            "Apex Legends",
+            "Call of Duty: Warzone",
+            "Fall Guys"
+        ],
+        "correctAnswer": "Call of Duty: Warzone"
+    }
+]
