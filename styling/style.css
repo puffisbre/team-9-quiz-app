@@ -157,7 +157,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 550px 12% 0;
+  margin: 550px auto 0;
   gap: 20px;
   z-index: 2;
 }
@@ -169,6 +169,14 @@ body {
  background-color: var(--white);
  border-radius: 10px;
  border-style: none;
+}
+
+#category-title{
+  text-align: center;
+}
+
+.category-button-wrapper{
+  margin: auto;
 }
 
 #result {
@@ -404,6 +412,12 @@ body {
   .container .questionContainer p {
     padding-top: 15px;
     font-size: 1.2rem;
+  }
+
+  .category-button-wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
   }
   .info-container {
     background-image: url('/Img/result-pratbubbla.png');
