@@ -18,6 +18,7 @@ const infoContainer = document.querySelector(".info-container");
 const categoryContainer = document.getElementById("category-container");
 const movieCategory = document.getElementById("movie-category");
 const gameCategory = document.getElementById("game-category");
+const confetti = document.querySelector('.confetti');
 
 
 
@@ -64,6 +65,7 @@ highScore.style.listStyle = "none";
 resultScore.style.listStyle = "none";
 infoContainer.style.display = "none";
 startButton.style.display = "none";
+confetti.style.display = "none";
 
 const removeQuiz = () => {
   keepScore.style.visibility = "hidden";
@@ -79,7 +81,7 @@ const startAgain = () => {
   infoContainer.style.display = "none";
   choosenCategory = "";
   resultScore.innerHTML = "";
- 
+  confetti.style.display = "none";
 };
 
 
@@ -145,6 +147,7 @@ function renderResult() {
   highScoreParent.appendChild(inputField);
   highScoreParent.appendChild(addScorebutton);
   infoContainer.style.display = "flex";
+  confetti.style.display = "flex";
 }
 
 function handleQuestion(index) {
@@ -248,8 +251,8 @@ const addHighScore = () => {
   let playerName = document.getElementById("inputName");
   let valueArray = [];
   if (playerName.value != "") {
-    valueArray[0] = `Player name: ${playerName.value}`;
-    valueArray[1] = `Score: ${score}`;
+    valueArray[0] = `Player name: ${playerName.value}.......`;
+    valueArray[1] = `Score: ${score}.......`;
     valueArray[2] = `Category: ${whatCategoryPlayed}`;
     highScore.innerHTML = "";
     highScoreParent.innerHTML = "";
@@ -272,6 +275,11 @@ const addHighScore = () => {
 const seeHighScore = () => {
   // highScore.innerHTML = "";
   // highScoreParent.innerHTML = "";
+  const liTitles = document.createElement('li');
+  liTitles.innerHTML = 'HIGHSCORES!';
+  liTitles.style.fontSize = "30px";
+  liTitles.style.textAlign = "center";
+  highScore.appendChild(liTitles);
   for (const item in localStorage) {
     if (localStorage.hasOwnProperty(item)) {
       const li = document.createElement("li");
