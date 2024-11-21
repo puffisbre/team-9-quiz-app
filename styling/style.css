@@ -197,21 +197,30 @@ body {
 .footerContainer{
     width: 100%;
 }
+
+
 .socialIcons{
     display: flex;
     justify-content: center;
 }
+
+.socialIcons li {
+  list-style: none;
+}
+
 .socialIcons a{
     text-decoration: none;
     padding:  10px;
     background-color: white;
     margin: 10px;
     border-radius: 50%;
+    list-style: none;
 }
 .socialIcons a i{
     font-size: 2em;
     color: black;
     opacity: 0,9;
+    
 }
 
 .highScoreContainer {
@@ -270,3 +279,5 @@ body {
     gap: 0 20px;
   }
 }
+
+
