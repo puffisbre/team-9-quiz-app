@@ -210,6 +210,7 @@ const addHighScore = () => {
   let uniqueKey = "id" + Math.random().toString(16).slice(2);
   let playerName = document.getElementById("inputName");
   let valueArray = [];
+  //let sortAscending = valueArray.sort((a,b) => a.score - b.score);
   if (playerName.value != "") {
     valueArray[0] = `Player name: ${playerName.value}`;
     valueArray[1] = `Score: ${score}`;

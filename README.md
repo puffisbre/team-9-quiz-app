@@ -1,6 +1,6 @@
 # team-9-quiz-app
 Quiz application.
-# Allas namn
+# Alla i gruppen
 Mladen Kovacic
 
 ## Quizen fungerar finesser i quizen
@@ -26,6 +26,12 @@ Vi har använt oss av githubs backlog för att fördela arbetsuppgifter som ex: 
 Men vi har valt att större delen av projektet att mobbprogramera och även gå igenom oilka delar om man har gjort nånting på egen hand så alla kan ta del av det om det skulle vilja ändra på något till det bättre eller något estetiskt.
 På de sättet så har vi använt mer av våra styrkor än brister pga att vi har haft möten och träffats och gått igenom tillsammans på en stor skärm så alla kan se och ta del och förstå om någonting skulle vara oklart för någon i gruppen.
 
+#### Tools
 
+
+##### Prestanda 
+
+
+###### Reflektera 
 
 
