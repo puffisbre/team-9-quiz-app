@@ -18,7 +18,7 @@
   --gray: #929292;
 }
 
-body {
+main {
   background-color: var(--body-bg);
   min-height: 100vh;
   display: grid;
