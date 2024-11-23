@@ -8,7 +8,7 @@
   box-sizing: border-box;
   color: #000;
   font-family: 'Titan One' ,sans-serif;
-  overflow: hidden;
+  
 }
 
 :root {
@@ -26,6 +26,7 @@ main {
   place-items: center;
   padding: 1rem;
   font-size: 16px;
+  overflow: hidden;
 }
 
 
