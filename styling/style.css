@@ -38,7 +38,7 @@ main {
 }
 
 .startScreen {
-  position: absolute;
+  position: relative;
   width: 400px;
   height: 400px;
   top: calc(50% - 280px);
@@ -51,8 +51,8 @@ main {
 
 .startButton{
   text-transform: uppercase;
-  /* position: fixed; */
-  margin: 350px auto 0;
+  position: relative;
+  margin: 100px auto 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,8 +61,6 @@ main {
   background-color: var(--white);
   border-radius: 10px;
   font-size: 30px;
-  /* margin-top: 120px; */
-  position: relative;
   z-index: 1;
 }
 
@@ -159,7 +157,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 350px auto 0;
+  margin: 100px auto 0;
   gap: 20px;
   z-index: 2;
 }
@@ -375,7 +373,7 @@ main {
   }
 
   .startButton {
-    margin: 550px auto 0;
+    margin: 100px auto 0;
   }
 
   .category-button-wrapper{
