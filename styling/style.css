@@ -8,6 +8,7 @@
   box-sizing: border-box;
   color: #000;
   font-family: 'Titan One' ,sans-serif;
+  overflow-x: hidden;
 }
 
 :root {
@@ -36,10 +37,10 @@ main {
 }
 
 .startScreen {
-  position: fixed;
+  position: absolute;
   width: 400px;
-  height: 500px;
-  top: calc(50% - 380px);
+  height: 400px;
+  top: calc(50% - 280px);
   left: calc(50% - 200px);
   display: flex;
   justify-content: center;
@@ -50,7 +51,7 @@ main {
 .startButton{
   text-transform: uppercase;
   /* position: fixed; */
-  margin: 550px auto 0;
+  margin: 350px auto 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,7 +97,7 @@ main {
 } 
 
 .container .questionContainer{
-  width: 430px;
+  width: 390px;
   height: 330px;
   background-image: url(../Img/comic-pratbubbla-white.png);
   background-position: center;
@@ -157,7 +158,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 550px auto 0;
+  margin: 350px auto 0;
   gap: 20px;
   z-index: 2;
 }
