@@ -26,7 +26,7 @@ main {
   place-items: center;
   padding: 1rem;
   font-size: 16px;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 
@@ -42,17 +42,21 @@ main {
   width: 400px;
   height: 400px;
   top: calc(50% - 280px);
-  left: calc(50% - 200px);
+  left: calc(50% - 215px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 0;
 }
 
+.quizImage{
+  width: 90%;
+}
+
 .startButton{
   text-transform: uppercase;
   position: relative;
-  margin: 100px auto 0;
+  margin: 20px 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,6 +80,7 @@ main {
   margin-top: 20px;
   display: flex;
   justify-content: evenly;
+  margin-right: 20px;
   gap: 0.5rem;
 }
 .container .quiz-progress span {
@@ -96,7 +101,7 @@ main {
 } 
 
 .container .questionContainer{
-  width: 390px;
+  width: 380px;
   height: 330px;
   background-image: url(../Img/comic-pratbubbla-white.png);
   background-position: center;
@@ -124,12 +129,12 @@ main {
 }
 .container .answer-container button {
   display: block;
-  width: 100%;
+  width: 330px;
   padding: 0.8rem 0.5rem;
   border-radius: 10px;
   border: none;
   font-size: 1.2rem;
-  margin: 0.4rem auto;
+  margin: 0.4rem 15px;
   background-color: var(--white);
   border: 2px solid var(--white);
   color: var(--primary-dark);
@@ -157,7 +162,7 @@ main {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 100px auto 0;
+  margin: 20px -20px;
   gap: 20px;
   z-index: 2;
 }
@@ -367,9 +372,19 @@ main {
   }
 
   .container .answer-container {
+    position: relative;
     display: grid;
     grid-template-columns: auto auto;
+    width: 100%;
     gap: 0 20px;
+  }
+
+  .container .answer-container button {
+    width: 250px;
+  }
+
+  .container .quiz-progress {
+    margin-left: 15px;
   }
 
   .startButton {
@@ -400,6 +415,7 @@ main {
   }
 
   .container .answer-container button {
+    width: 360px;
     padding: 1.6rem 1.2rem;
   }
 
