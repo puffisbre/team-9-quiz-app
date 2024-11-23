@@ -8,7 +8,7 @@
   box-sizing: border-box;
   color: #000;
   font-family: 'Titan One' ,sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 :root {
