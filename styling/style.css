@@ -288,6 +288,10 @@ main {
   justify-content: center;
 }
 
+footer{
+  margin-right: 30px;
+}
+
 .footerContainer{
     width: 100%;
     z-index: 1;
