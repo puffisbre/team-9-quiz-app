@@ -27,5 +27,16 @@ Men vi har valt att större delen av projektet att mobbprogramera och även gå 
 På de sättet så har vi använt mer av våra styrkor än brister pga att vi har haft möten och träffats och gått igenom tillsammans på en stor skärm så alla kan se och ta del och förstå om någonting skulle vara oklart för någon i gruppen.
 
 
+### Prestanda
+1. Lägg till bredd och höjd för bilder
+2. Minimera oanvänd CSS
+3. Eliminera render-blockerande resurser
+4. Optimera LCP-element
+5. Servera bilder i moderna format
+6. Minimera JavaScript
+7. Förbättra cache-hantering
+8. Undvik stora layoutskift
+9. Aktivera Permissions-Policy korrek
+
 
 
