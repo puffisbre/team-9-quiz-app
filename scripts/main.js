@@ -235,6 +235,11 @@ function handleQuestion(index) {
         // answer.disabled = true;
         setTimeout(() => {
           handleQuestion(currentQuestionIndex);
+          const answerItem = document.querySelectorAll('#answerBtn');
+          answerItem.forEach (item => {
+            const randomOrder = Math.floor(Math.random() * 4) + 1;
+            item.style.order = randomOrder;
+          })
         }, 1_000);
       } else if (true) {
         removeQuiz();
