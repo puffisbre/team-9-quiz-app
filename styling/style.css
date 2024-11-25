@@ -337,7 +337,7 @@ footer{
 .modal-container {
   display: none;
   /* position: relative; */
-  /* z-index: ; */
+   z-index: 5;
 }
 .show {
   display: flex;
