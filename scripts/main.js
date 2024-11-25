@@ -98,6 +98,11 @@ startButton.addEventListener("click", function () {
   stopWatch.style.display = "block";
   stopWatch.innerHTML = "Time left: " + totalTime.toString() + "s";
   newInterval = setInterval(timer, 1000);
+  const answerItem = document.querySelectorAll('#answerBtn');
+  answerItem.forEach (item => {
+    const randomOrder = Math.floor(Math.random() * 4) + 1;
+    item.style.order = randomOrder;
+  })
 });
 
 function renderResult() {
