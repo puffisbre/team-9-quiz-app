@@ -30,7 +30,15 @@ På de sättet så har vi använt mer av våra styrkor än brister pga att vi ha
 
 
 ##### Prestanda 
-
+1. Lägg till bredd och höjd för bilder
+2. Minimera oanvänd CSS
+3. Eliminera render-blockerande resurser
+4. Optimera LCP-element
+5. Servera bilder i moderna format
+6. Minimera JavaScript
+7. Förbättra cache-hantering
+8. Undvik stora layoutskift
+9. Aktivera Permissions-Policy korrekt
 
 ###### Reflektera 
 
