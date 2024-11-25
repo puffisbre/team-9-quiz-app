@@ -94,7 +94,7 @@ startButton.addEventListener("click", function () {
   questionContainer.style.display = "block";
   answerContainer.style.display = "grid";
   modalContainer.classList.remove("show");
-  totalTime = 120;
+  totalTime = 200;
   stopWatch.style.display = "block";
   stopWatch.innerHTML = "Time left: " + totalTime.toString() + "s";
   newInterval = setInterval(timer, 1000);
