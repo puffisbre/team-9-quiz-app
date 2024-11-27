@@ -1,7 +1,7 @@
 # team-9-quiz-app
 Quiz application.
 # Alla i gruppen
-Mladen Kovacic, Felix Olsson Stenersjö
+Mladen Kovacic, Felix Olsson Stenersjö, Ahmed
 
 ## Quizen fungerar finesser i quizen
 Det är ett quiz som har flera olika kategorier.
